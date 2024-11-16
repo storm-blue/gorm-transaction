@@ -2,10 +2,10 @@ package transaction
 
 import "gorm.io/gorm"
 
-type BaseRepository interface {
+type Repository interface {
 	TransactionManager
 }
 
-func NewBaseRepository(db *gorm.DB) BaseRepository {
+func NewRepository(db *gorm.DB) Repository {
 	return NewTransactionManager(db)
 }
